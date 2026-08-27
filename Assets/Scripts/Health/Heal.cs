@@ -6,10 +6,10 @@ public class Heal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        IHealable obj = other.GetComponent<IHealable>();
-        if (obj != null)
-
-            obj.Heal(_healingAmount);
-        Destroy(gameObject);
+        if (other.TryGetComponent<IHealable>(out var healable))
+        {
+            healable.Heal(_healingAmount);
+            Destroy(gameObject);
+        }
     }
 }

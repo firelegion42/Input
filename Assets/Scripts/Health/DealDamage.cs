@@ -6,12 +6,10 @@ public class DealDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Idamageable obj = other.GetComponent<Idamageable>();
-        if(obj != null)
+        if (other.TryGetComponent<IDamageable>(out var damageable))           
         {
-            obj.TakeDamage(_damage);
+            damageable.TakeDamage(_damage);
             Destroy(gameObject);
         }
     }
-
 }

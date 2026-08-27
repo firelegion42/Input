@@ -651,6 +651,9 @@ GameObject:
   - component: {fileID: 586001394}
   - component: {fileID: 586001393}
   - component: {fileID: 586001400}
+  - component: {fileID: 586001403}
+  - component: {fileID: 586001402}
+  - component: {fileID: 586001401}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -947,15 +950,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a092a07229c02847b912bd95fe9505f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
-  rb: {fileID: 586001395}
+  _jump: {fileID: 586001403}
+  _movement: {fileID: 586001402}
+  _attack: {fileID: 586001401}
+--- !u!114 &586001401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586001392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b626e68a5ed6fe46a6155aef236e0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  _bullet: {fileID: 1942327345127309288, guid: 8213f4e7f90a894439e51d10315c313f, type: 3}
+  _gun: {fileID: 914657818}
+  _bulletSpeed: 10
+--- !u!114 &586001402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586001392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bc94d530c841b498b5691dedf19bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  _movementSpeed: 4
+--- !u!114 &586001403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586001392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01f9e53c2393b047af72cb60d913bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
   _jumpForce: 400
   _groundMask:
     serializedVersion: 2
     m_Bits: 16
-  _movementSpeed: 2
-  _bullet: {fileID: 1942327345127309288, guid: 8213f4e7f90a894439e51d10315c313f, type: 3}
-  _gun: {fileID: 914657818}
-  _bulletSpeed: 20
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
