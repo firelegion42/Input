@@ -950,9 +950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a092a07229c02847b912bd95fe9505f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
-  _jump: {fileID: 586001403}
-  _movement: {fileID: 586001402}
-  _attack: {fileID: 586001401}
 --- !u!114 &586001401
 MonoBehaviour:
   m_ObjectHideFlags: 0

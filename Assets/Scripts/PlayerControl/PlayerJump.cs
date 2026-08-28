@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump : MonoBehaviour, IJumpable
 {
    
     [SerializeField] private int _jumpForce;

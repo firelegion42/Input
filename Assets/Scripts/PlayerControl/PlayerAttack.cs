@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _gun;
@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
         
     private GameObject _currentBullet;
 
-    public void Shoot()
+    public void Attack()
     {
         _currentBullet = Instantiate(_bullet, _gun.position, Quaternion.identity);
 

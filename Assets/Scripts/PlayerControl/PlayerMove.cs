@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, IMoveable
 {
     [SerializeField] private float _movementSpeed;
 
@@ -21,4 +21,5 @@ public class PlayerMove : MonoBehaviour
     {
         rb.linearVelocity = new Vector3(_moveInput.x * _movementSpeed, rb.linearVelocity.y, _moveInput.y * _movementSpeed);
     }
+
 }
