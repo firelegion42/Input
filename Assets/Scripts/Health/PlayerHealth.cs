@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerHealth : Health, IDamageable, IHealable
+public class PlayerHealth : Health, IDamageable, IHealable, IDataManager
 {     
 
     public void Heal(float healingAmount)
@@ -19,5 +19,17 @@ public class PlayerHealth : Health, IDamageable, IHealable
         Debug.Log(_currentHealth);
         Debug.Log("Dead");
         Destroy(gameObject);
+    }
+
+    public void LoadData(GameData data)
+    {
+        _maxHealth = data.maxHealth;
+        _currentHealth = data.currentHealth;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.maxHealth = _maxHealth;
+        data.currentHealth = _currentHealth;
     }
 }

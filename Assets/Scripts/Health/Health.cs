@@ -13,10 +13,9 @@ public abstract class Health : MonoBehaviour
     [SerializeField] public UnityEvent<float> healthChanged;
     [SerializeField] public UnityEvent death;
 
-    protected void Start()
+    private void Start()
     {
         _currentHealth = _maxHealth;
-        Debug.Log(_currentHealth);
     }
 
     public virtual void TakeDamage(float damage)
@@ -33,4 +32,5 @@ public abstract class Health : MonoBehaviour
     }
 
     public abstract void Death();
+ 
 }
