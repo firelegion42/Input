@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour, IAttack, IDataManager
+public class PlayerAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _gun;
@@ -19,15 +19,5 @@ public class PlayerAttack : MonoBehaviour, IAttack, IDataManager
         currentVelocity.linearVelocity = _gun.up * _bulletSpeed;
         bulletCount++;
         Destroy(_currentBullet, 1);
-    }
-
-    public void LoadData(GameData data)
-    {
-        this.bulletCount = data.bulletCount;
-    }
-
-    public void SaveData( GameData data)
-    {
-        data.bulletCount = this.bulletCount;
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour, IMoveable, IDataManager
+public class PlayerMove : MonoBehaviour, IMoveable
 {
     [SerializeField] private float _movementSpeed;
 
@@ -20,15 +20,5 @@ public class PlayerMove : MonoBehaviour, IMoveable, IDataManager
     private void Update()
     {
         rb.linearVelocity = new Vector3(_moveInput.x * _movementSpeed, rb.linearVelocity.y, _moveInput.y * _movementSpeed);
-    }
-
-    public void LoadData(GameData data)
-    {
-        _movementSpeed = data.movementSpeed;
-    }
-
-    public void SaveData(GameData data)
-    {
-        data.movementSpeed = _movementSpeed;
     }
 }
